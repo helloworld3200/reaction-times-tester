@@ -33,15 +33,16 @@ def save_results_to_file(results: list[float], file_name: str) -> None:
     else:
         file = open(file_name, "x")
 
-    current_time = time.ctime()
+    file.writelines(results)
 
     file.close()
 
 def main() -> None:
     print("Reaction Times Test by helloworld3200\n")
     ask_for_redo = "\nWould you like to test again? Y for yes, N for no: "
-    test_results = []
     file_name = "results.txt"
+    current_time = time.ctime()
+    test_results = ["Test results logged at: "+current_time]
 
     want_to_test = True
     while want_to_test:
@@ -52,6 +53,8 @@ def main() -> None:
     average_result = statistics.mean(test_results)
     print(f"Test finished, (mean) average result was {average_result}")
     print("\nSaving results...")
+
+    test_results.append("\n")
     set_cwd_to_file_dir()
     save_results_to_file(test_results, file_name)
 

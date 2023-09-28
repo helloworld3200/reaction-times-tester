@@ -1,10 +1,10 @@
 from pathlib import Path
-import random
+from random import uniform
 import time
 import statistics
 import os
 
-def test_time(waitTime: int = random.randint(1000, 10000), inputMsg: str ="PRESS ENTER NOW") -> float:
+def test_time(waitTime: int = uniform(1.0, 5.0), inputMsg: str ="PRESS ENTER NOW") -> float:
     print("Beginning test, remember it waits for a random amount of time!\n")
 
     time.sleep(waitTime)
@@ -12,7 +12,7 @@ def test_time(waitTime: int = random.randint(1000, 10000), inputMsg: str ="PRESS
     startTime = time.time()
     input(inputMsg)
     endTime = time.time()
-    passedTime = startTime-endTime
+    passedTime = endTime-startTime
 
     print(f"Time passed (in seconds): {passedTime}")
     print(f"Time at start (in seconds): {startTime}")
@@ -33,7 +33,8 @@ def save_results_to_file(results: list[float], file_name: str) -> None:
     else:
         file = open(file_name, "x")
 
-    file.writelines(results)
+    results_str = [str(element)+"\n" for element in results]
+    file.writelines(results_str)
 
     file.close()
 
@@ -42,7 +43,8 @@ def main() -> None:
     ask_for_redo = "\nWould you like to test again? Y for yes, N for no: "
     file_name = "results.txt"
     current_time = time.ctime()
-    test_results = ["Test results logged at: "+current_time]
+    test_results = []
+    test_results_time = ["Test results logged at: "+current_time]
 
     want_to_test = True
     while want_to_test:
@@ -54,6 +56,7 @@ def main() -> None:
     print(f"Test finished, (mean) average result was {average_result}")
     print("\nSaving results...")
 
+    test_results =  test_results_time + test_results
     test_results.append("\n")
     set_cwd_to_file_dir()
     save_results_to_file(test_results, file_name)

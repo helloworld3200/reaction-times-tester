@@ -18,7 +18,7 @@ The LICENSE file contains the standard MIT License, which is a set of guidelines
 If you have not used this website before, this is where programmers from all over the world manage their code. When code from a **"user"** has **"commited"** some code to a **"repository"**, it is uploaded for others to (if they have chosen to) collaborate on. This **"version control"** is the basic principle to organise, manage and share your code.
 
 If you would like to understand more about how this works, draw your attention to the top of the screen.  
-![Top of screen](https://github.com/helloworld3200/reaction-times-tester/readme-imgs/top-of-repo.png)
+![Top of screen](https://github.com/helloworld3200/reaction-times-tester/blob/main/readme-imgs/top-of-repo.png?raw=true)
 
 The **"Code"** section is where you can view the files by clicking on each of them in an organised manner. It is split into **"Branches"**, the one you are on is called **"main"**. Each feature you are working on should have its own individual branch, which helps organise your code. All branches are eventually merged into **"main"**.
 

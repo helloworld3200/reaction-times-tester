@@ -11,9 +11,13 @@ from random import uniform
 import time
 import statistics
 import os
+import colorama
+import json
 
 # Test the time, and give back this value.
-def test_time(waitTime: int = uniform(1.0, 5.0), inputMsg: str ="PRESS ENTER NOW") -> float:
+def test_time(waitTime: int = uniform(1.0, 5.0), inputMsg: str ="PRESS ENTER NOW", randColour: bool = False) -> float:
+    
+
     print("Beginning test, remember it waits for a random amount of time!\n")
 
     time.sleep(waitTime)

@@ -2,11 +2,11 @@ import './style.css'
 
 console.log("Main JavaScript is being run");
 
-function createLowerRangeSelector()
+function createLowerRangeSelector(rangeLimit = 60)
 {
     let selector = document.getElementById("lowerRangeSelect");
 
-    for (let i = 1; i <= 60; i++)
+    for (let i = 1; i <= rangeLimit; i++)
     {
         let option = document.createElement("option");
 
@@ -16,3 +16,10 @@ function createLowerRangeSelector()
         selector.appendChild(option);
     }
 }
+
+function main()
+{
+    createLowerRangeSelector();
+}
+
+main();

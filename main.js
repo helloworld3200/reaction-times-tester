@@ -2,9 +2,9 @@ import './style.css'
 
 console.log("Main JavaScript is being run");
 
-function createLowerRangeSelector(rangeLimit = 60)
+function createRangeSelector(id, rangeLimit = 60)
 {
-    let selector = document.getElementById("lowerRangeSelect");
+    let selector = document.getElementById(id);
 
     for (let i = 1; i <= rangeLimit; i++)
     {
@@ -19,7 +19,8 @@ function createLowerRangeSelector(rangeLimit = 60)
 
 function main()
 {
-    createLowerRangeSelector();
+    createRangeSelector("lowerRangeSelect");
+    createRangeSelector("upperRangeSelect");
 }
 
 main();

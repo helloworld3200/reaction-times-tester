@@ -1,5 +1,7 @@
 import './style.css'
 
+console.log("Main JavaScript is being run");
+
 function createLowerRangeSelector()
 {
     let selector = document.getElementById("lowerRangeSelect");

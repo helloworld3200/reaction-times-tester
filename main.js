@@ -1,4 +1,5 @@
-import './style.css'
+import './css/main.css';
+import './css/topbar.css'
 
 console.log("Main JavaScript is being run");
 

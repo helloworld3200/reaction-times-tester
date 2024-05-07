@@ -18,7 +18,7 @@ br {
   margin: 10px 0;
 }
 
-.selectionRow {
+.selectionItem {
 		display: flex;
 		flex-direction: row;
     justify-content: center;
@@ -26,10 +26,14 @@ br {
     gap: 1em;
 }
 
-.selectionColumn {
+.selectionRow {
   display: flex;
   gap: 5em;
   padding: 1em
+}
+
+hr {
+  margin: 2em;
 }
 
 a {
@@ -39,6 +43,10 @@ a {
 }
 a:hover {
   color: #535bf2;
+}
+
+span.instruction {
+  font-size: 1.2em;
 }
 
 body {
@@ -70,14 +78,14 @@ h4 {
 
 p {
   text-align: center;
-  font-size: 25px;
+  font-size: 1.2em;
   white-space: pre-line;
 }
 
 #app {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0;
-  padding: 2rem;
+  
   text-align: center;
 }
 
@@ -119,17 +127,4 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

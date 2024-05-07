@@ -1,0 +1,18 @@
+{
+  "name": "reaction-times-tester",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
+    "create": "npm run build && npm run deploy"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "vite": "^5.0.8"
+  },
+  "homepage": "https://helloworld3200.github.io/reaction-times-tester/"
+}

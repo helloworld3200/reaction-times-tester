@@ -1,0 +1,26 @@
+.topbarSpace {
+    height: 2em;
+}
+
+.topbar {
+    background-color: #5a5a5a2d;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    height: 4em;
+    
+    display: flex;
+    align-items: center;
+}
+
+.topbarItem {
+    font-size: 2em;
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+    padding: 1em;
+}
+
+.topbarItem :hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reaction Times Tester</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="topbar">
+        <span class="topbarItem">Reaction Times Tester</span>
+      </div>
+      <div class="topbarSpace"></div>
+      <p>
+        This is a <b>Reaction Times Tester</b> designed to measure people's reaction
+        times to different stimuli. This website was designed by Krish 
+        and Nicholas for the CREST Gold Award.
+        <br>
+        This website was designed with the Vite framework and NPM.
+      </p>
+      <h3>
+        Tutorial
+      </h3>
+      <p>
+				<!-- Put tutorial on how to use reaction times tester -->
+      </p>
+      <hr/>
+      <h3>Setup Tester</h3>
+      <div class="selectionColumn">
+        <div class="selectionRow">
+          <div class="selectionItem">
+            <h4>
+              Lower Range
+            </h4>
+            <select id="lowerRangeSelect">
+              <option value="">Select a number</option>
+            </select>
+          </div>
+          <div class="selectionItem">
+            <h4>
+              Upper Range
+            </h4>
+            <select id="upperRangeSelect">
+              <option value="">Select a number</option>
+            </select>
+          </div>
+          <div class="selectionItem">
+            <h4>Stimulus Colour</h4>
+            <input type="color" id="stimulusColor" value="#87CEFA"></input>
+          </div>
+        </div>
+      </div>
+      <span class="instruction">
+        Remember, click the <b>enter</b> key when you see the colour appear!
+      </span>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

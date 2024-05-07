@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/public/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reaction Times Tester</title>
   </head>
@@ -20,24 +20,30 @@
         Tutorial
       </h3>
       <p>
-
+				<!-- Put tutorial on how to use reaction times tester -->
       </p>
       <h3>Setup Tester</h3>
-      <div>
-        <h4>
-          Lower Range
-        </h4>
-        <select id="lowerRangeSelect">
-          <option value="">Select a number</option>
-        </select>
-      </div>
-      <div>
-        <h4>
-          Upper Range
-        </h4>
-        <select id="upperRangeSelect">
-          <option value="">Select a number</option>
-        </select>
+      <div class="selectionColumn">
+        <div class="selectionRow">
+          <h4>
+            Lower Range
+          </h4>
+          <select id="lowerRangeSelect">
+            <option value="">Select a number</option>
+          </select>
+        </div>
+        <div class="selectionRow">
+          <h4>
+            Upper Range
+          </h4>
+          <select id="upperRangeSelect">
+            <option value="">Select a number</option>
+          </select>
+        </div>
+        <div class="selectionRow">
+          <h4>Stimulus Colour</h4>
+          <input type="color" id="stimulusColor" value="#87CEFA"></input>
+        </div>
       </div>
     </div>
     <script type="module" src="/main.js"></script>

@@ -1,0 +1,8 @@
+.testerBox {
+    border-radius: 10px;
+    background-color: black;
+    border: 1em solid dimgrey;
+    margin: 1em;
+    height: 1em;
+    width: 1em;
+}

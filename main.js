@@ -1,7 +1,8 @@
 import './css/main.css';
 import './css/topbar.css'
+import './css/tester.css'
 
-console.log("Main JavaScript is being run");
+console.log("Main JS Running");
 
 function createRangeSelector(id, rangeLimit = 60)
 {

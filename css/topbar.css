@@ -21,6 +21,6 @@
     padding: 1em;
 }
 
-.topbarItem :hover {
+.topbarItem:hover {
     text-decoration: underline;
 }

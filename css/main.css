@@ -83,6 +83,11 @@ p {
   font-size: 1em;
 }
 
+.horizontalCenter {
+  display: flex;
+  justify-content: center;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

@@ -1,8 +1,29 @@
 .testerBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
-    background-color: black;
-    border: 1em solid dimgrey;
+    border: 0.5em solid dimgrey;
     margin: 1em;
-    height: 1em;
-    width: 1em;
+    height: 8em;
+    width: 30em;
+}
+
+button.startTestButton {
+    border-radius: 8px;
+    border: 0.5em solid transparent;
+    padding: 0.4em 1.2em;
+    font-size: 1em;
+    background-color: #2770dd;
+    color: white;
+    margin: 1em;
+    transition: transform 0.3s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+button.startTestButton:hover {
+    transform: translateY(-5px);
+}
+
+button.startTestButton.clicked {
+    background-color: #1c4b8c;
 }

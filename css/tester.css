@@ -9,6 +9,15 @@
     width: 30em;
 }
 
+.testerStats {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 button.startTestButton {
     border-radius: 8px;
     border: 0.5em solid transparent;
@@ -27,3 +36,5 @@ button.startTestButton:hover {
 button.startTestButton.clicked {
     background-color: #1c4b8c;
 }
+
+

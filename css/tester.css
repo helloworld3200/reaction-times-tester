@@ -1,21 +1,32 @@
+@keyframes bottomDropIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 .testerBox {
+    position: relative; /* Add this line to make the element positioned relative to its parent */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     border: 0.5em solid dimgrey;
     margin: 1em;
-    height: 8em;
+    height: 10em;
     width: 30em;
 }
 
 .testerStats {
     position: absolute;
-    top: 50%;
+    bottom: 0%;
     left: 0;
     right: 0;
-    height: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 25%;
+    background-color: rgba(107, 105, 105, 0.453);
+    animation: bottomDropIn 0.5s;
 }
 
 button.startTestButton {

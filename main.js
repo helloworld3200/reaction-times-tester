@@ -10,14 +10,23 @@ class TesterBox
     {
         this.box = document.getElementById(id);
 
-        this.createResetButton();
+        this.createChildren();
         this.resetBox();
     }
 
     resetBox()
     {
+        // Should only call after all elements created
         this.box.textContent = "";
+
         this.box.appendChild(this.button);
+        this.box.appendChild(this.statsPanel);
+    }
+
+    createChildren()
+    {
+        this.createResetButton();
+        this.createStatsPanel();
     }
 
     createResetButton()
@@ -28,6 +37,12 @@ class TesterBox
         this.button.textContent = "Start Test";
         this.button.className = "startTestButton";
         addButtonClickAnimation(this.button);
+    }
+
+    createStatsPanel()
+    {
+        this.statsPanel = document.createElement("div");
+        this.statsPanel.className = "testerStats";
     }
 }
 
@@ -58,12 +73,15 @@ function addButtonClickAnimation(button, duration = 200)
     });
 }
 
+function createTester()
+{
+    let testerBox = new TesterBox();
+}
+
 function main()
 {
     createRangeSelector("lowerRangeSelect");
     createRangeSelector("upperRangeSelect");
-
-    let testerBox = new TesterBox();
 }
 
 main();

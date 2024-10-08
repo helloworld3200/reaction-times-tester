@@ -73,6 +73,11 @@ function addButtonClickAnimation(button, duration = 200)
     });
 }
 
+function addStimulusMainloop(button) 
+{
+    button.addEventListener("click")
+}
+
 function createTester()
 {
     let testerBox = new TesterBox();
@@ -85,6 +90,7 @@ function main()
 
     let button = document.getElementById("startTestButton")
     addButtonClickAnimation(button);
+    addStimulusMainloop(button);
 }
 
 main();

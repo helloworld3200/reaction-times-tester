@@ -48,4 +48,9 @@ button.startTestButton.clicked {
     background-color: #1c4b8c;
 }
 
+.timeElapsed{
+    transform: translateY(-23px);
+    font-size: 1.75em;
+}
+
 

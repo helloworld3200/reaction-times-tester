@@ -82,6 +82,9 @@ function main()
 {
     createRangeSelector("lowerRangeSelect");
     createRangeSelector("upperRangeSelect");
+
+    let button = document.getElementById("startTestButton")
+    addButtonClickAnimation(button);
 }
 
 main();

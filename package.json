@@ -14,5 +14,8 @@
     "gh-pages": "^6.1.1",
     "vite": "^5.0.8"
   },
-  "homepage": "https://helloworld3200.github.io/reaction-times-tester/"
+  "homepage": "https://helloworld3200.github.io/reaction-times-tester/",
+  "dependencies": {
+    "sass": "^1.79.4"
+  }
 }

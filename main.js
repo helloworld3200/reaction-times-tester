@@ -75,7 +75,9 @@ function addButtonClickAnimation(button, duration = 200)
 
 function addStimulusMainloop(button) 
 {
-    button.addEventListener("click")
+    button.addEventListener("click", () => {
+        console.log("Starting stimulus tests")
+    })
 }
 
 function createTester()

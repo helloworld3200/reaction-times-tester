@@ -51,6 +51,7 @@ button.startTestButton.clicked {
 .timeElapsed{
     transform: translateY(-23px);
     font-size: 1.75em;
+    transform: translateX(-105px);
 }
 
 

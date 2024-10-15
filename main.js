@@ -4,46 +4,10 @@ import './css/tester.css'
 
 console.log("Main JS Running");
 
-class TesterBox
-{
-    constructor(id = "tester")
-    {
-        this.box = document.getElementById(id);
-
-        this.createChildren();
-        this.resetBox();
-    }
-
-    resetBox()
-    {
-        // Should only call after all elements created
-        this.box.textContent = "";
-
-        this.box.appendChild(this.button);
-        this.box.appendChild(this.statsPanel);
-    }
-
-    createChildren()
-    {
-        this.createResetButton();
-        this.createStatsPanel();
-    }
-
-    createResetButton()
-    {
-        this.button = document.createElement("button");
-        let text = document.createTextNode("Reset");
-        this.button.appendChild(text);
-        this.button.textContent = "Start Test";
-        this.button.className = "startTestButton";
-        addButtonClickAnimation(this.button);
-    }
-
-    createStatsPanel()
-    {
-        this.statsPanel = document.createElement("div");
-        this.statsPanel.className = "testerStats";
-    }
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function createRangeSelector(id, rangeLimit = 60)
@@ -73,16 +37,35 @@ function addButtonClickAnimation(button, duration = 200)
     });
 }
 
-function addStimulusMainloop(button) 
+function addStimulusMainloop(button, testerBox, colorPicker) 
 {
     button.addEventListener("click", () => {
         console.log("Starting stimulus tests")
-    })
-}
 
-function createTester()
-{
-    let testerBox = new TesterBox();
+        // TODO: Add opacity animation to button
+        // (temporary)
+        button.style.display = "none";
+
+        let lowerRange = document.getElementById("lowerRangeSelect").value;
+        let upperRange = document.getElementById("upperRangeSelect").value;
+
+        let lowerRangeInt = Number(lowerRange);
+        let upperRangeInt = Number(upperRange);
+
+        console.log("Lower range: " + lowerRangeInt);
+        console.log("Upper range: " + upperRangeInt);
+
+        let timeToWait = getRandomInt(lowerRangeInt, upperRangeInt);
+        console.log("Waiting for " + timeToWait + " seconds");
+
+        setTimeout(() => {
+            console.log("Stimulus test completed");
+            
+            let color = colorPicker.value;
+
+            testerBox.style.backgroundColor = color;
+        }, timeToWait);
+    })
 }
 
 function main()
@@ -90,9 +73,12 @@ function main()
     createRangeSelector("lowerRangeSelect");
     createRangeSelector("upperRangeSelect");
 
+    let testerBox = document.getElementById("testerBox");
     let button = document.getElementById("startTestButton")
+    let colorPicker = document.getElementById("stimulusColor");
+
     addButtonClickAnimation(button);
-    addStimulusMainloop(button);
+    addStimulusMainloop(button, testerBox, colorPicker);
 }
 
-main();
+document.addEventListener("DOMContentLoaded", main);

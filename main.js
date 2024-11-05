@@ -4,6 +4,8 @@ import './css/tester.css'
 
 console.log("Main JS Running");
 
+const numberNotSelectedMsg = "Please select a number for both ranges.";
+
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -37,17 +39,34 @@ function addButtonClickAnimation(button, duration = 200)
     });
 }
 
+function checkRanges(ranges) {
+    for (let range of ranges) {
+        console.log("Checking range: " + range);
+        if (range === "") {
+            alert(numberNotSelectedMsg);
+            return true;
+        }
+    }
+
+    return false;
+}
+
 function addStimulusMainloop(button, testerBox, colorPicker) 
 {
     button.addEventListener("click", () => {
         console.log("Starting stimulus tests")
 
+        let lowerRange = document.getElementById("lowerRangeSelect").value;
+        let upperRange = document.getElementById("upperRangeSelect").value;
+
+        console.log(lowerRange)
+        if (checkRanges([lowerRange, upperRange])) {
+            return;
+        }
+
         // TODO: Add opacity animation to button
         // (temporary)
         button.style.display = "none";
-
-        let lowerRange = document.getElementById("lowerRangeSelect").value;
-        let upperRange = document.getElementById("upperRangeSelect").value;
 
         let lowerRangeInt = Number(lowerRange);
         let upperRangeInt = Number(upperRange);
@@ -63,8 +82,11 @@ function addStimulusMainloop(button, testerBox, colorPicker)
             
             let color = colorPicker.value;
 
+            console.log("Setting color of " + testerBox);
             testerBox.style.backgroundColor = color;
-        }, timeToWait);
+
+            button.style.display = "block";
+        }, timeToWait * 1000);
     })
 }
 
@@ -73,7 +95,7 @@ function main()
     createRangeSelector("lowerRangeSelect");
     createRangeSelector("upperRangeSelect");
 
-    let testerBox = document.getElementById("testerBox");
+    let testerBox = document.getElementById("tester");
     let button = document.getElementById("startTestButton")
     let colorPicker = document.getElementById("stimulusColor");
 

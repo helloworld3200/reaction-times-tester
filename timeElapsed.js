@@ -36,7 +36,7 @@ function startTime() {
 
         // Display the time in the format HH:MM:SS:MMM
         document.getElementById('time').textContent = 
-            `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}:${formatTime(milliseconds)}`;
+            seconds.toString()+"."+milliseconds.toString();
     }, 1); // Update every millisecond
 }
 
@@ -58,8 +58,3 @@ function resetTime() {
     // Reset the display
     document.getElementById('time').textContent = "00:00:00:000";
 }
-
-formatTime(value)
-startTime()
-stopTime()
-resetTime()
